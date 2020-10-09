@@ -1,0 +1,84 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "ddddวย",
+    "version": "2",
+    "title": "เช็คชื่อเข้างาน Cs Connection"
+  },
+  "host": "localhost:3000",
+  "tags": [
+    {
+      "name": "ระบบเช็คชื่อ"
+    },
+    {
+      "name": "ระบบเช็คจำนวนคน"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/Search": {
+      "post": {
+        "tags": [
+          "ระบบเช็คชื่อ"
+        ],
+        "summary": "ลงทะเบียนเข้าร่วมงาน",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "formData",
+            "description": "รหัสนักศึกษา",
+            "required": true,
+            "type": "string",
+            "default": "61050190"
+          },
+          {
+            "name": "password",
+            "in": "formData",
+            "description": "รหัสประจำตัวนักศึกษา",
+            "required": true,
+            "type": "string",
+            "default": "1234"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Update",
+            "schema": {
+              "example": "เข้าสู่ระบบสำเร็จ"
+            }
+          }
+        }
+      }
+    },
+    "/count": {
+      "get": {
+        "tags": [
+          "ระบบเช็คจำนวนคน"
+        ],
+        "summary": "ลงทะเบียนเข้าร่วมงาน",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Update",
+            "schema": {
+              "example": "จำนวนคนที่เข้าร่วมงานทั้งหมด 7 คน"
+            }
+          }
+        }
+      }
+    }
+  }
+}
